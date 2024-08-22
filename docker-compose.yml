@@ -1,0 +1,9 @@
+services:
+  tgbot:
+    build: tgbot
+    restart: always
+    scale: 1
+    environment:
+      - TOKEN=
+      - CHANNEL_ID=
+
