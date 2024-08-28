@@ -1,9 +1,22 @@
 services:
-  tgbot:
-    build: tgbot
+  PostGenerating:
+    build: PostGenerating
     restart: always
     scale: 1
     environment:
       - TOKEN=
       - CHANNEL_ID=
+      - DELAY=30
+      - NON_WORKING_HOURS=
+      - PROMPT=создай пост в телеграм канал по backend  flask или django или pydantica или pandas или matplotlib или scipy или scikit-learn или fastapi или tensorflow или keras или requests или beautifulsoup или sqlalchemynumpy или aiogram или discord.py и тд на питоне (выбери случайно а не то что превое стоит!!!) только по python, с интересным вопросом уровня middle/senior.  посты не должны повторяться, они должны быть уникальными!!! пост должен быть только один!!! не делай много постов за раз!!! сделай пост увлекательным, чтобы о них мало кто знал!!!! это должны быть не только вопросы, но и рассказы о каких-то технологиях и нововедениях!!!!! учитывай то, что ты делаешь много постов в день! также на каждый пост добовляй теги и не пиши что это пост и тд, делай вид что ты обычный человек сделай текст красивым, с эмодзи выделением и тд для выделения используй ** с обеих сторон также добовляй код для примера
 
+  QuizGenerating:
+    build: QuizGenerating
+    restart: always
+    scale: 1
+    environment:
+      - TOKEN=
+      - CHANNEL_ID=
+      - DELAY=30
+      - NON_WORKING_HOURS=
+      - PROMPT=создай опрос по backend fastapi flask django pydantica pandas matplotlib scipy scikit-learn tensorflow keras requests beautifulsoup sqlalchemynumpy aiogram discord.py и тд на питоне только по python, с интересным вопросом уровня middle/senior. по строгой форме запрос должен быть строго по форме и не иметь ничего другого  форма - question|options(list)|correct_option_index пример - пайтон это компелированый или интерпертируемый язык|компелированый,интерпертируемый|1 опросы не должны повторяться, они должны быть уникальными!!! опрос должен быть только один!!! не делай много опросов за раз!!! сделай вопросы увлекательными, чтобы на них мало кто знал ответ!!!!
